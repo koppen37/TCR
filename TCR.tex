@@ -1,0 +1,39 @@
+\documentclass[a4paper]{article}
+
+\usepackage[a4paper,left=3cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{listings,xcolor,color}
+
+\lstset{language=C++,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{blue}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    commentstyle=\color{lightgray}\ttfamily,
+    morecomment=[l][\color{magenta}]{\#},
+    frame=Bbt,
+    breaklines=true
+}
+
+\begin{document}
+%Titlepage according to NWERC rules
+\null\vfill
+\begin{center}
+{\huge Team37}\\
+\vspace{10cm}
+{\large Radboud University Nijmegen}
+\end{center}
+\vfill
+\thispagestyle{empty} %No pagenumber on the cover
+\newpage
+
+%Start counting from here
+\clearpage
+\setcounter{page}{1}
+
+
+\section{Graphs}
+\paragraph{Dijsktra:} \hfill
+Voorbeeld van de kleuren
+\lstinputlisting{Graphs/dijkstra.cpp}
+
+
+\end{document}
