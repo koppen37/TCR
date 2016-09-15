@@ -1,0 +1,15 @@
+Error checklist:
+
+• Memory corruption? (Valgrind)
+
+• Integer overflow? (compile with -ftrapv)
+
+• Implicit type conversions? (compile with -Wconversion)
+
+• Divides by zero (or small numbers in floating point code)?
+
+• Correct output for large (near limits) testcases?
+
+• Fast enough (both theoretical and practical)?
+
+• Output entirely to spec? (whitespace! and string output)
