@@ -1,7 +1,7 @@
 #define INF (1LL<<60)
 #define endl '\n'
 #define mp make_pair
-
+//Super relaxed
 pair<vector<int64_t>, vector<int64_t> > dijkstra(vector<vector<pair<int64_t,int64_t> > >& graph, int64_t u){
 
     vector<int64_t> dist (graph.size(), INF), prev (graph.size(), -1);
