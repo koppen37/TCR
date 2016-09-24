@@ -1,3 +1,6 @@
 TCR.aux
 TCR.log
 TCR.synctex.gz
+
+*.in
+bin/
