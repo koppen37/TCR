@@ -1,11 +1,14 @@
-bool dfs(const vector<vector<int> > &graph, vector<int>& colors, const int &i, const int &color) {
+vector<vector<int> > g;
+vector<int> colors;
+
+bool dfs(const int &i, const int &color) {
     if(colors[i] != 0 && colors[i] != color) {
         return false;
     }
     if(colors[i] == 0) {
         colors[i] = color;
-        for(unsigned int j = 0; j < graph[i].size(); j++) {
-            if(!dfs(graph, colors, graph[i][j], -color)) {
+        for(unsigned int j = 0; j < g[i].size(); j++) {
+            if(!dfs(g[i][j], -color)) {
                 return false;
             }
         }
@@ -13,10 +16,10 @@ bool dfs(const vector<vector<int> > &graph, vector<int>& colors, const int &i, c
     return true;
 }
 
-bool bipartite(const vector<vector<int> > &graph, const int &p) {
-    vector<int> colors(p, 0);
+bool bipartite(const int &p) {
+	colors.assign(p,0);
     for(int i = 0; i < p; i++) {
-        if(colors[i] == 0 && !dfs(graph, colors, i, 1)) {
+        if(colors[i] == 0 && !dfs(i, 1)) {
             return false;
         }
     }

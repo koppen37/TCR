@@ -1,4 +1,6 @@
-vector<int> topological_sort(vector<vector<int> > &g) {
+vector<vector<int> > g;
+
+vector<int> topological_sort() {
     int n = g.size();
 
     vector<int> in_degs(n);

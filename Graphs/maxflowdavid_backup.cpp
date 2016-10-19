@@ -2,14 +2,14 @@
 typedef pair<int64_t,int64_t> pii;
  
 vector<pii> from;
-vector<vector<int64_t> > es, ec;
+vector<vector<int64_t> > edges, edgecost;
 vector<int64_t> dist;
  
 void dijkstras(int64_t s){
-    int64_t n = es.size()();
+    int64_t n = edges.size();
     dist.assign(n,0);
     from.assign(n,{-1,0});
-    vector<bool> seen (n);
+    vector<bool> seen (n,false);
     priority_queue<pii> Q;
     dist[s] = INF;
     Q.push({0,s});
@@ -20,9 +20,9 @@ void dijkstras(int64_t s){
         if(seen[cur]) continue;
         seen[cur] = true;
  
-        for(int i = 0; i < es[cur].size(); i++){
-            int64_t t = es[cur][i],
-                    c = ec[cur][i];
+        for(int i = 0; i < edges[cur].size(); i++){
+            int64_t t = edges[cur][i],
+                    c = edgecost[cur][i];
  
             if(seen[t] || min(dist[cur],c) <= dist[t]) continue;
  
@@ -34,11 +34,11 @@ void dijkstras(int64_t s){
 }
  
 int64_t maxflow(int64_t s, int64_t t){
-    int64_t n = es.size();
+    int64_t n = edges.size();
     int64_t flow = 0;
-    vector<vector<int64_t> > me(0); //To find and create backedges in residual graph
+    vector<vector<int64_t> > medge(0);
     for(int i = 0; i < n ; i++){
-        me.push_back(vector<int64_t> (es[i].size(), -1));
+        medge.push_back(vector<int64_t> (edges[i].size(), -1));
     }
  
     while(true){
@@ -51,14 +51,14 @@ int64_t maxflow(int64_t s, int64_t t){
         while(cur != s){
             int64_t f = from[cur].first;
             int64_t j = from[cur].second;
-            ec[f][j] -= dist[t];
-            if(me[f][j] == -1){
-                me[f][j] = es[cur].size();
-                me[cur].push_back(j);
-                es[cur].push_back(f);
-                ec[cur].push_back(dist[t]);
+            edgecost[f][j] -= dist[t];
+            if(medge[f][j] == -1){
+                medge[f][j] = edges[cur].size();
+                medge[cur].push_back(j);
+                edges[cur].push_back(f);
+                edgecost[cur].push_back(dist[t]);
             } else {
-                ec[cur][me[f][j]] += dist[t];
+                edgecost[cur][medge[f][j]] += dist[t];
             }
             cur = f;
         }

@@ -1,14 +1,13 @@
-#define EXTRA_CHECK if (edgecap[cur][i] == 0) continue;
 #define INF (1LL<<60)
+
 typedef pair<int64_t,int64_t> pii;
  
-vector<vector<int64_t> > edges, edgecap, edgecost;
+vector<vector<int64_t> > es, ecap, ecost;
 vector<int64_t> pot, dist;
 vector<pii> from;
  
 void dijkstras(int64_t s){
-    //cout << "Starting Dijkstras" << endl;
-    int64_t N = edges.size();
+    int64_t N = e.size();
     priority_queue<pii> Q;
     vector<bool> seen (N,false);
  
@@ -20,18 +19,17 @@ void dijkstras(int64_t s){
  
     while(!Q.empty()){
         int64_t cur = Q.top().second;
-        //cout << cur << endl;
         Q.pop();
         if(seen[cur]) continue;
         seen[cur] = true;
  
-        for(int i = 0; i < edges[cur].size(); i++){
-            int64_t t = edges[cur][i],
-                    c = edgecost[cur][i];
+        for(int i = 0; i < es[cur].size(); i++){
+            int64_t t = es[cur][i],
+                    c = ecost[cur][i];
  
             if(seen[t] || dist[cur] + c >= dist[t]) continue;
- 
-            EXTRA_CHECK
+ 			//Add EXTRA CHECKS here!
+            if(ecap[cur][i] == 0) continue;
  
             dist[t] = dist[cur] + c;
             from[t] = {cur,i};
@@ -41,54 +39,50 @@ void dijkstras(int64_t s){
 }
  
 pii maxflow(int64_t s, int64_t t){
-    int64_t n = edges.size();
+    int64_t n = es.size();
     int64_t flow = 0, cost = 0;
     pot.assign(n,0);
-    vector<vector<int64_t> > medge(0);
+    vector<vector<int64_t> > me(0);
     for(int i = 0; i < n; i++){
-        medge.push_back(vector<int64_t> (edges[i].size(), -1));
+        me.push_back(vector<int64_t> (es[i].size(), -1));
     }
     while(true){
         dijkstras(s);
-        //cout << "done with dijkstras " << endl;
         if(dist[t] == INF) break;
  
-        //cout << "find maxadd" << endl;
         //find maxadd
         int64_t maxadd = INF;
         int64_t cur = t;
         while(cur != s){
-            maxadd = min(maxadd, edgecap[from[cur].first][from[cur].second]);
+            maxadd = min(maxadd, ecap[from[cur].first][from[cur].second]);
             cur = from[cur].first;
         }
  
         cost += (pot[t] + dist[t]) * maxadd;
         flow += maxadd;
  
-        //cout << "potential adjust" << endl;
         //Potential adjust
         for(int i = 0; i < n; i++){
-            for(int j = 0; j < edges[i].size(); j++){
-                edgecost[i][j] += dist[i] - dist[edges[i][j]];
+            for(int j = 0; j < es[i].size(); j++){
+                ecost[i][j] += dist[i] - dist[es[i][j]];
             }
             pot[i] += dist[i];
         }
  
-        //cout << "adjust edges " << endl;
         //adjust edges
         cur = t;
         while(cur != s){
             int64_t f = from[cur].first,
                     j = from[cur].second;
-            edgecap[f][j] -= maxadd;
-            if(medge[f][j] == -1){
-                medge[f][j] = edges[cur].size();
-                medge[cur].push_back(j);
-                edges[cur].push_back(f);
-                edgecost[cur].push_back(0);
-                edgecap[cur].push_back(maxadd);
+            ecap[f][j] -= maxadd;
+            if(me[f][j] == -1){
+                me[f][j] = es[cur].size();
+                me[cur].push_back(j);
+                es[cur].push_back(f);
+                ecost[cur].push_back(0);
+                ecap[cur].push_back(maxadd);
             } else {
-                edgecap[cur][medge[f][j]] += maxadd;
+                ecap[cur][me[f][j]] += maxadd;
             }
             cur = f;
         }

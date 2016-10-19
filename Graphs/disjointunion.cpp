@@ -1,7 +1,7 @@
 // Union-Find Disjoint Sets Library written in OOP manner, using both path compression and union by rank heuristics
 class UnionFind {                                              // OOP style
     private:
-        vector<int> p, rank, setSize;                       // remember: vi is vector<int>
+        vector<int> p, rank, setSize;                      
         int numSets;
     public:
         UnionFind(int N) {
