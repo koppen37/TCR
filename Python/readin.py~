@@ -1,0 +1,9 @@
+for line in sys.stdin:
+	try:
+		nm = line.split()
+		n = int(nm[0])
+		m = int(nm[1])
+		print(exponential(n, m) % m)
+	except:
+		print(0)
+	

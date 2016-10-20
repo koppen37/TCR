@@ -4,13 +4,13 @@
 
 typedef pair<int64_t,int64_t> pii;
 
-vector<int64_t> dist, prev;
+vector<int64_t> dist, pred;
 vector<vector<pii> > g;
 
 void dijkstra(int64_t u){
 	int64_t n = g.size();
 	dist.assign(n,INF);
-	prev.assign(n, -1);
+	pred.assign(n, -1);
     dist[u] = 0;
     priority_queue<pii> Q;
     Q.push({-dist[u],u});
@@ -22,13 +22,13 @@ void dijkstra(int64_t u){
         Q.pop();
         if(seen[w]) continue;
 	    seen[w] = true;
-        for(auto to : graph[w]){
-        
-        	if(seen[to.first] || dist[to.first] <= dist[w] + to.second) 
+        for(auto to : g[w]){
+
+        	if(seen[to.first] || dist[to.first] <= dist[w] + to.second)
         		continue;
-        		
+
             dist[to.first] = dist[w] + to.second;
-            prev[to.first] = w;
+            pred[to.first] = w;
             Q.push({-dist[to.first],to.first});
         }
     }

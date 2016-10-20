@@ -1,6 +1,6 @@
 #define INF (1LL << 60)
 
-vector<int64_t> dist;
+vector<vector<int64_t> > dist;
 
 void floyd_warshall (){
 	int64_t n = dist.size();
