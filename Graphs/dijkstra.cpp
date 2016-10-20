@@ -2,32 +2,39 @@
 #define endl '\n'
 #define mp make_pair
 
-pair<vector<int64_t>, vector<int64_t> > dijkstra(vector<vector<pair<int64_t,int64_t> > >& graph, int64_t u){
+typedef pair<int64_t,int64_t> pii;
 
-    vector<int64_t> dist (graph.size(), INF), prev (graph.size(), -1);
+vector<int64_t> dist, pred;
+vector<vector<pii> > g;
+
+void dijkstra(int64_t u){
+	int64_t n = g.size();
+	dist.assign(n,INF);
+	pred.assign(n, -1);
     dist[u] = 0;
-    priority_queue<pair<int64_t,int64_t> > Q;
-    Q.push(mp(-dist[u],u));
-    vector<bool> seen (graph.size(), false);
+    priority_queue<pii> Q;
+    Q.push({-dist[u],u});
+    vector<bool> seen (n);
 
     while(!Q.empty()){
-        pair<int64_t,int64_t> p = Q.top();
+        pii p = Q.top();
         int64_t w = p.second;
         Q.pop();
-        if(!seen[w]){
-            seen[w] = true;
-            for(auto to : graph[w]){
-                if(dist[to.first] > dist[w] + to.second){
-                    dist[to.first] = dist[w] + to.second;
-                    prev[to.first] = w;
-                    Q.push(mp(-dist[to.first],to.first));
-                }
-            }
+        if(seen[w]) continue;
+	    seen[w] = true;
+        for(auto to : g[w]){
+
+        	if(seen[to.first] || dist[to.first] <= dist[w] + to.second)
+        		continue;
+
+            dist[to.first] = dist[w] + to.second;
+            pred[to.first] = w;
+            Q.push({-dist[to.first],to.first});
         }
     }
-    return  make_pair(dist,prev);
 }
 
+//Since edit 19/10/2016 not tested.
 //Solved : https://open.kattis.com/problems/shortestpath1
 //http://codeforces.com/problemset/problem/20/C
 //http://www.spoj.com/problems/SHPATH/

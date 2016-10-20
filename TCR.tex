@@ -1,18 +1,31 @@
 \documentclass[a4paper]{article}
 
 \usepackage[a4paper,left=3cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
-\usepackage{listings,xcolor,color}
+\usepackage{listings,xcolor,color,showexpl}
+\usepackage{pxfonts}
+
+\definecolor{kandieblauwietspaarser}{rgb}{0.6, 0.4, 0.8}
 
 \lstset{language=C++,
     basicstyle=\ttfamily,
-    keywordstyle=\color{blue}\ttfamily,
+    keywordstyle=\color{kandieblauwietspaarser}\bfseries,
     stringstyle=\color{red}\ttfamily,
     commentstyle=\color{lightgray}\ttfamily,
     morecomment=[l][\color{magenta}]{\#},
     frame=Bbt,
     breaklines=true,
-    morekeywords={vector}
+    morekeywords={vector,int64_t,pii},
+     literate=
+        {\{}{{\textcolor{red}{\{}}}{1}
+        {\}}{{\textcolor{red}{\}}}}{1}
+        	{;}{{\textcolor{red}{;}}}{1}
+		{[}{{\textcolor{red}{[}}}{1}
+		{]}{{\textcolor{red}{]}}}{1}
+		{<}{{\textcolor{red}{<}}}{1}
+		{>}{{\textcolor{red}{>}}}{1},
 }
+\setcounter{secnumdepth}{1}   
+\setcounter{tocdepth}{4}
 
 \begin{document}
 %Titlepage according to NWERC rules
@@ -30,6 +43,8 @@
 \clearpage
 \setcounter{page}{1}
 
+\tableofcontents
+\newpage
 
 \section{Basic} 
 \paragraph{Power (Fast Exponentiation)} \hfill
@@ -40,25 +55,52 @@
 \lstinputlisting{Basic/prime_sieve.cpp}
 \paragraph{Extended Euclidean} \hfill
 \lstinputlisting{Basic/extended_euclidean.cpp}
+\paragraph{Extended Euclidean2} \hfill
+\lstinputlisting{Basic/extendedeuclid.cpp}
+\paragraph{CRT} \hfill
+\lstinputlisting{Basic/crt.cpp}
 \section{Graphs}
 \paragraph{Dijsktra:} \hfill
 \lstinputlisting{Graphs/dijkstra.cpp}
 \paragraph{Floyd Warshall} \hfill
 \lstinputlisting{Graphs/floydwarshall.cpp}
+\paragraph{Bellmanford} \hfill
+\lstinputlisting{Graphs/bellmanford.cpp}
+\paragraph{Topological Sort} \hfill
+\lstinputlisting{Graphs/topo_sort.cpp}
 \paragraph{Disjoint Union} \hfill
 \lstinputlisting{Graphs/disjointunion.cpp}
+\subsection{Bipartite Graphs}
+\paragraph{Bipartite check} \hfill
+\lstinputlisting{Graphs/bipartite.cpp}
+\paragraph{Hopcroft Karp} \hfill
+\lstinputlisting{Graphs/hopcroftkarp.cpp}
 \subsection{MST}
 \paragraph{Kruskall} \hfill
 \lstinputlisting{Graphs/kruskall.cpp}
 \paragraph{Prim} \hfill
 \lstinputlisting{Graphs/prim.cpp}
 \subsection{MaxFlow}
+\paragraph{Maxflow Julian} \hfill
 \lstinputlisting{Graphs/maxflow.cpp}
+\paragraph{Maxflow David} \hfill
+\lstinputlisting{Graphs/maxflow2.cpp}
+\paragraph{Min Cost Max Flow} \hfill
+\lstinputlisting{Graphs/mincostmaxflow.cpp}
 \section{Geometry}
 \paragraph{2D} \hfill
-\lstinputlisting{geometry/2D.cpp}
-
-
+\lstinputlisting{Geometry/2D.cpp}
+\paragraph{3D} \hfill
+\lstinputlisting{Geometry/3D.cpp}
+\section{Segment Trees}
+\paragraph{Basic} \hfill
+\lstinputlisting{SegmentTree/segmenttreemini.cpp}
+\paragraph{Lazy update} \hfill
+\lstinputlisting{SegmentTree/segmenttreeupdate.cpp}
+\section{Python}
+\paragraph{Read in} \hfill
+\lstinputlisting{Python/readin.py}[language=Python]
 \end{document}
+\grid
 \grid
 \grid

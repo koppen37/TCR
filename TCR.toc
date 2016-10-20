@@ -1,0 +1,31 @@
+\contentsline {section}{\numberline {1}Basic}{2}
+\contentsline {paragraph}{Power (Fast Exponentiation)}{2}
+\contentsline {paragraph}{Binomial}{2}
+\contentsline {paragraph}{Prime Sieve}{2}
+\contentsline {paragraph}{Extended Euclidean}{2}
+\contentsline {paragraph}{Extended Euclidean2}{3}
+\contentsline {paragraph}{CRT}{4}
+\contentsline {section}{\numberline {2}Graphs}{4}
+\contentsline {paragraph}{Dijsktra:}{4}
+\contentsline {paragraph}{Floyd Warshall}{5}
+\contentsline {paragraph}{Bellmanford}{6}
+\contentsline {paragraph}{Topological Sort}{6}
+\contentsline {paragraph}{Disjoint Union}{7}
+\contentsline {subsection}{Bipartite Graphs}{8}
+\contentsline {paragraph}{Bipartite check}{8}
+\contentsline {paragraph}{Hopcroft Karp}{8}
+\contentsline {subsection}{MST}{9}
+\contentsline {paragraph}{Kruskall}{9}
+\contentsline {paragraph}{Prim}{10}
+\contentsline {subsection}{MaxFlow}{11}
+\contentsline {paragraph}{Maxflow Julian}{11}
+\contentsline {paragraph}{Maxflow David}{12}
+\contentsline {paragraph}{Min Cost Max Flow}{13}
+\contentsline {section}{\numberline {3}Geometry}{15}
+\contentsline {paragraph}{2D}{15}
+\contentsline {paragraph}{3D}{17}
+\contentsline {section}{\numberline {4}Segment Trees}{18}
+\contentsline {paragraph}{Basic}{18}
+\contentsline {paragraph}{Lazy update}{19}
+\contentsline {section}{\numberline {5}Python}{20}
+\contentsline {paragraph}{Read in}{20}
