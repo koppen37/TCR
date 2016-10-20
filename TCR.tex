@@ -1,9 +1,24 @@
 \documentclass[a4paper]{article}
 
 \usepackage[a4paper,left=3cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
-\usepackage{listings,xcolor,color,showexpl}
-\usepackage{pxfonts}
+\usepackage{listings,xcolor,color,pxfonts}
 
+%Header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{Radboud University Nijmegen}
+
+%Table of Contents
+\usepackage{tocloft}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{2}  
+\cftsetindents{section}{10pt}{16pt} 
+\cftsetindents{subsection}{15pt}{20pt}
+\cftsetindents{paragraph}{20pt}{30pt}
+
+%Code layout
 \definecolor{kandieblauwietspaarser}{rgb}{0.6, 0.4, 0.8}
 
 \lstset{language=C++,
@@ -24,8 +39,7 @@
 		{<}{{\textcolor{red}{<}}}{1}
 		{>}{{\textcolor{red}{>}}}{1},
 }
-\setcounter{secnumdepth}{1}   
-\setcounter{tocdepth}{4}
+
 
 \begin{document}
 %Titlepage according to NWERC rules
@@ -60,7 +74,7 @@
 \paragraph{CRT} \hfill
 \lstinputlisting{Basic/crt.cpp}
 \section{Graphs}
-\paragraph{Dijsktra:} \hfill
+\paragraph{Dijsktra} \hfill
 \lstinputlisting{Graphs/dijkstra.cpp}
 \paragraph{Floyd Warshall} \hfill
 \lstinputlisting{Graphs/floydwarshall.cpp}
@@ -99,8 +113,5 @@
 \lstinputlisting{SegmentTree/segmenttreeupdate.cpp}
 \section{Python}
 \paragraph{Read in} \hfill
-\lstinputlisting{Python/readin.py}[language=Python]
+\lstinputlisting[language=Python]{Python/readin.py}
 \end{document}
-\grid
-\grid
-\grid
