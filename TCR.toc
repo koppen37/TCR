@@ -4,28 +4,28 @@
 \contentsline {paragraph}{Prime Sieve}{2}
 \contentsline {paragraph}{Extended Euclidean}{2}
 \contentsline {paragraph}{Extended Euclidean2}{3}
-\contentsline {paragraph}{CRT}{4}
+\contentsline {paragraph}{CRT}{3}
 \contentsline {section}{\numberline {2}Graphs}{4}
 \contentsline {paragraph}{Dijsktra}{4}
 \contentsline {paragraph}{Floyd Warshall}{5}
-\contentsline {paragraph}{Bellmanford}{6}
+\contentsline {paragraph}{Bellmanford}{5}
 \contentsline {paragraph}{Topological Sort}{6}
-\contentsline {paragraph}{Disjoint Union}{7}
-\contentsline {subsection}{\numberline {2.1}Bipartite Graphs}{8}
-\contentsline {paragraph}{Bipartite check}{8}
+\contentsline {paragraph}{Disjoint Union}{6}
+\contentsline {subsection}{\numberline {2.1}Bipartite Graphs}{7}
+\contentsline {paragraph}{Bipartite check}{7}
 \contentsline {paragraph}{Hopcroft Karp}{8}
 \contentsline {subsection}{\numberline {2.2}MST}{9}
 \contentsline {paragraph}{Kruskall}{9}
-\contentsline {paragraph}{Prim}{10}
-\contentsline {subsection}{\numberline {2.3}MaxFlow}{11}
-\contentsline {paragraph}{Maxflow Julian}{11}
-\contentsline {paragraph}{Maxflow David}{12}
-\contentsline {paragraph}{Min Cost Max Flow}{13}
-\contentsline {section}{\numberline {3}Geometry}{15}
-\contentsline {paragraph}{2D}{15}
-\contentsline {paragraph}{3D}{17}
-\contentsline {section}{\numberline {4}Segment Trees}{18}
-\contentsline {paragraph}{Basic}{18}
-\contentsline {paragraph}{Lazy update}{19}
-\contentsline {section}{\numberline {5}Python}{20}
-\contentsline {paragraph}{Read in}{20}
+\contentsline {paragraph}{Prim}{9}
+\contentsline {subsection}{\numberline {2.3}MaxFlow}{10}
+\contentsline {paragraph}{Maxflow Julian}{10}
+\contentsline {paragraph}{Maxflow David}{11}
+\contentsline {paragraph}{Min Cost Max Flow}{12}
+\contentsline {section}{\numberline {3}Geometry}{14}
+\contentsline {paragraph}{2D}{14}
+\contentsline {paragraph}{3D}{16}
+\contentsline {section}{\numberline {4}Segment Trees}{17}
+\contentsline {paragraph}{Basic}{17}
+\contentsline {paragraph}{Lazy update}{17}
+\contentsline {section}{\numberline {5}Python}{18}
+\contentsline {paragraph}{Read in}{18}
