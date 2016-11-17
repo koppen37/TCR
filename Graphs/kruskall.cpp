@@ -20,5 +20,3 @@ vector<Edge> kruskal(vector<Edge> e, int64_t n){
     }
     return A;
 }
-
-//Solved : https://open.kattis.com/problems/minspantree

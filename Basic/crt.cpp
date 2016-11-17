@@ -20,5 +20,4 @@ pii crm(const vector<int64_t> &x, const vector<int64_t> &a){
     }
     return ret;
 }
-
 //Credits to RagnarGrootKoerkamp

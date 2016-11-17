@@ -32,5 +32,3 @@ int64_t prim(int64_t start){
     }
     return length;
 }
-
-//Solved : https://open.kattis.com/problems/minspantree

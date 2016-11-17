@@ -68,51 +68,86 @@
 \lstinputlisting{Basic/binom.cpp}
 \paragraph{Prime Sieve} \hfill
 \lstinputlisting{Basic/prime_sieve.cpp}
+
+
+\newpage
 \paragraph{Extended Euclidean} \hfill
-\lstinputlisting{Basic/extended_euclidean.cpp}
-\paragraph{Extended Euclidean2} \hfill
 \lstinputlisting{Basic/extendedeuclid.cpp}
 \paragraph{CRT} \hfill
 \lstinputlisting{Basic/crt.cpp}
+\paragraph{Ternary Search}\hfill
+\lstinputlisting[basicstyle=\footnotesize\ttfamily]{Basic/ternary_search.cpp}
+
+\newpage
 \section{Graphs}
 \paragraph{Dijsktra} \hfill
 \lstinputlisting{Graphs/dijkstra.cpp}
+
+\newpage
 \paragraph{Floyd Warshall} \hfill
 \lstinputlisting{Graphs/floydwarshall.cpp}
+
+\newpage
 \paragraph{Bellmanford} \hfill
 \lstinputlisting{Graphs/bellmanford.cpp}
 \paragraph{Topological Sort} \hfill
 \lstinputlisting{Graphs/topo_sort.cpp}
+
+\newpage
 \paragraph{Disjoint Union} \hfill
 \lstinputlisting{Graphs/disjointunion.cpp}
+
+
+\newpage
 \subsection{Bipartite Graphs}
 \paragraph{Bipartite check} \hfill
 \lstinputlisting{Graphs/bipartite.cpp}
+
+\newpage
 \paragraph{Hopcroft Karp} \hfill
-\lstinputlisting{Graphs/hopcroftkarp.cpp}
+\lstinputlisting[basicstyle=\footnotesize\ttfamily]{Graphs/hopcroftkarp.cpp}
 \subsection{MST}
 \paragraph{Kruskall} \hfill
 \lstinputlisting{Graphs/kruskall.cpp}
 \paragraph{Prim} \hfill
 \lstinputlisting{Graphs/prim.cpp}
 \subsection{MaxFlow}
-\paragraph{Maxflow Julian} \hfill
-\lstinputlisting{Graphs/maxflow.cpp}
+%\paragraph{Maxflow Julian} \hfill
+%\lstinputlisting[basicstyle=\footnotesize\ttfamily]{Graphs/maxflow.cpp}
 \paragraph{Maxflow David} \hfill
-\lstinputlisting{Graphs/maxflow2.cpp}
+\lstinputlisting[basicstyle=\footnotesize\ttfamily]{Graphs/maxflow2.cpp}
 \paragraph{Min Cost Max Flow} \hfill
 \lstinputlisting{Graphs/mincostmaxflow.cpp}
+
+\newpage
 \section{Geometry}
 \paragraph{2D} \hfill
 \lstinputlisting{Geometry/2D.cpp}
 \paragraph{3D} \hfill
 \lstinputlisting{Geometry/3D.cpp}
+
+\newpage
 \section{Segment Trees}
 \paragraph{Basic} \hfill
 \lstinputlisting{SegmentTree/segmenttreemini.cpp}
+
+\newpage
 \paragraph{Lazy update} \hfill
 \lstinputlisting{SegmentTree/segmenttreeupdate.cpp}
 \section{Python}
 \paragraph{Read in} \hfill
 \lstinputlisting[language=Python]{Python/readin.py}
+
+\section{Bash}
+\begin{lstlisting}[language=bash]
+for i in *.in
+	do
+		bin/A < $i
+	done
+
+for i in *.in
+	do
+		bin/A < $i | diff - ${i/in}out
+	done
+\end{lstlisting}
 \end{document}

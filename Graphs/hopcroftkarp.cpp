@@ -1,19 +1,18 @@
 #define INF (1<<30)
- 
+
 struct Node {
     int match, deg, id;
-    int a, b;
     set<int> adj;
- 
+
     bool operator<(const Node& rhs) const{
         if(deg == rhs.deg) return id > rhs.id;
         else return deg > rhs.deg;
     }
 };
- 
+
 vector<Node> U, V;
 vector<int> dist;
- 
+
 bool bfs() {
     queue<int> Q;
     for(int i = 1; i < U.size(); i++) {
@@ -39,7 +38,7 @@ bool bfs() {
     }
     return dist[0] != INF;
 }
- 
+
 bool dfs(int i) {
     if(i != 0) {
         for(const int &j : U[i].adj) {
@@ -56,7 +55,7 @@ bool dfs(int i) {
     }
     return true;
 }
- 
+
 int hopcroft_karp() {
     int matching = 0;
     while(bfs()) {
