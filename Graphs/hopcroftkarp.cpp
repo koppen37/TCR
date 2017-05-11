@@ -1,5 +1,6 @@
 #define INF (1<<30)
 
+//the code is 1 indexed, match should be initialized 0, id is only relevant for sort and interpreting answer.
 struct Node {
     int match, deg, id;
     set<int> adj;
@@ -58,6 +59,7 @@ bool dfs(int i) {
 
 int hopcroft_karp() {
     int matching = 0;
+    dist.assign(U.size(), INF); //This is untested
     while(bfs()) {
         for(int i = 1; i < U.size(); i++) {
             if(U[i].match == 0) {
